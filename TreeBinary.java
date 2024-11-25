@@ -99,7 +99,7 @@ public class TreeBinary<T extends Comparable<T>> implements Comparable<T> {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    TreeBinary other = (TreeBinary) obj;
+    TreeBinary<T> other = (TreeBinary<T>) obj;
     if (data == null) {
       if (other.data != null)
         return false;
@@ -131,13 +131,13 @@ public class TreeBinary<T extends Comparable<T>> implements Comparable<T> {
 
     if (dataX.compareTo(data) < 0) {
       if (left == null) {
-        left = new TreeBinary<T>(dataX);
+        left = new TreeBinary<>(dataX);
       } else {
         left.insert(dataX);
       }
     } else if (dataX.compareTo(data) > 0) {
       if (right == null) {
-        right = new TreeBinary<T>(dataX);
+        right = new TreeBinary<>(dataX);
       } else {
         right.insert(dataX);
       }
@@ -302,7 +302,7 @@ public class TreeBinary<T extends Comparable<T>> implements Comparable<T> {
   }
 
   public static void main(String[] args) throws Exception {
-    TreeBinary<Integer> tree = new TreeBinary<Integer>(5);
+    TreeBinary<Integer> tree = new TreeBinary<>(5);
     tree.insert(3);
     tree.insert(8);
     tree.insert(2);
